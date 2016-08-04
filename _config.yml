@@ -19,9 +19,3 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-
-JB :
-  analytics :
-    provider : google 
-    google : 
-    tracking_id : 'UA-81921580-3'
