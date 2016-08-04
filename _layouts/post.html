@@ -1,7 +1,23 @@
 ---
 layout: default
 ---
-{% include JB/analytics %}
+{% if site.safe and site.JB.analytics.provider and page.JB.analytics != false %}
+
+  {% case site.JB.analytics.provider %}
+  {% when "google" %}
+    {% include JB/analytics-providers/google %}
+  {% when "getclicky" %}
+    {% include JB/analytics-providers/getclicky %}
+  {% when "mixpanel" %}
+    {% include JB/analytics-providers/mixpanel %}
+  {% when "custom" %}
+    {% include custom/analytics %}
+  {% endcase %}
+
+{% endif %}
+
+
+
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
